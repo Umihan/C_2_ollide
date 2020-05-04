@@ -46,7 +46,21 @@ namespace ConsoleApplication1
             }
 
         }
+        static bool SaveConfig(int Anzahl)
+        {
+            var Path = @"C:\Users\Melvi\OneDrive\Desktop\COLLIDE\C_2_ollide\config.ini";
+            string Text = Convert.ToString(Anzahl);
+            File.WriteAllText(Path, Text);
 
+            if (File.Exists(Path))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         static void Main(string[] args)
         {
             Console.WindowWidth = seite*2;
