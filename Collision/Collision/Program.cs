@@ -44,8 +44,14 @@ namespace ConsoleApplication1
             public void Move()
             {
                 // Hier die Programmierung der Move Methode
+                /*
+                 * Das Erstplatzierung der Objekte errfolgt außerhalb dieser Methode.
+                 * Hier werden die Objekte verschoben, im Falle einer Kollision (collide)wird die entsprechende Methdoe aufgerufen.
+                 * Selbiges selbe gilt für das Löschen (hide) und Zeichnen (show).
+                 * Die Abfolge der Methoden entspricht der Programmbeschreibung (hide, show und dann collide).
+                 */
 
-                int XNeu = 0, YNeu = 0, XAlt = 0, YAlt = 0, Richtung = 0;
+                int XNeu = 0, YNeu = 0, XAlt = 0, YAlt = 0, Richtung = 0; // Evtl. müssen diese Parameter übergeben werden. 
 
                 Random RichtungZahl = new Random();
                 Richtung = RichtungZahl.Next(1,4);
@@ -71,9 +77,14 @@ namespace ConsoleApplication1
                     YNeu = YAlt - 1; 
                 } // Ende der If - Bedingung
 
-                collide();     // Hier wird überprüft ob es eine Überschreibung geben würde (dies wird auch dargestellt)
                 hide();        // Hier wird das Objekt auf der alten Position gelöscht
                 show();        // Objekt wird an neuer Stelle gezeichnet  
+
+                if (XNeu == XAlt)
+                {
+                    if (YNeu == YAlt)
+                        collide(); // Hier wird überprüft ob es eine Überschreibung geben würde (dies wird auch dargestellt)  
+                } 
             } // Ende der Move Methode 
 
         }
