@@ -51,7 +51,10 @@ namespace ConsoleApplication1
                  * Die Abfolge der Methoden entspricht der Programmbeschreibung (hide, show und dann collide).
                  */
 
-                int XNeu = 0, YNeu = 0, XAlt = 0, YAlt = 0, Richtung = 0; // Evtl. müssen diese Parameter übergeben werden. 
+                int XAlt = posx; // Die "alten Koordinaten" werden aus der Klasse "einer" übernommen
+                int YAlt = posy; 
+
+                int XNeu = 0, YNeu = 0, Richtung = 0; // Evtl. müssen diese Parameter übergeben werden. 
 
                 Random RichtungZahl = new Random();
                 Richtung = RichtungZahl.Next(1,4);
@@ -76,6 +79,9 @@ namespace ConsoleApplication1
                     XNeu = XAlt;
                     YNeu = YAlt - 1; 
                 } // Ende der If - Bedingung
+
+                posx = XNeu;   // Die "neuen Koordinaten" werden jetzt wieder auf die Position umgespeichert
+                posy = YNeu;
 
                 hide();        // Hier wird das Objekt auf der alten Position gelöscht
                 show();        // Objekt wird an neuer Stelle gezeichnet  
