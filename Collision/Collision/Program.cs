@@ -50,6 +50,8 @@ namespace ConsoleApplication1
                 int PositionX = 0;
                 int PositionY = 0; 
 
+                // Console.SetCursorPosition(PositionX, PositionY);
+
 
             }
 
