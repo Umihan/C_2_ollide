@@ -61,6 +61,20 @@ namespace ConsoleApplication1
                 return false;
             }
         }
+        static bool LoadConfig(ref int Anzahl)
+        {
+            var Path = @"C:\Users\Melvi\OneDrive\Desktop\COLLIDE\C_2_ollide\config.ini";
+            string Text = File.ReadAllText(Path);
+            Anzahl = Convert.ToInt32(Text); 
+            if (File.Exists(Path) & Anzahl > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         static void Main(string[] args)
         {
             Console.WindowWidth = seite*2;
