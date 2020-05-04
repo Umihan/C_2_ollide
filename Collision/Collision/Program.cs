@@ -45,8 +45,8 @@ namespace ConsoleApplication1
             {
                 // Hier die Programmierung der Move Methode
                 /*
-                 * Das Erstplatzierung der Objekte errfolgt außerhalb dieser Methode.
-                 * Hier werden die Objekte verschoben, im Falle einer Kollision (collide)wird die entsprechende Methdoe aufgerufen.
+                 * Die Erstplatzierung der Objekte errfolgt außerhalb dieser Methode.
+                 * Hier werden die Objekte verschoben, im Falle einer Kollision (collide) wird die entsprechende Methdoe aufgerufen.
                  * Selbiges selbe gilt für das Löschen (hide) und Zeichnen (show).
                  * Die Abfolge der Methoden entspricht der Programmbeschreibung (hide, show und dann collide).
                  */
