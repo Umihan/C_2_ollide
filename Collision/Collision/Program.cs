@@ -44,11 +44,23 @@ namespace ConsoleApplication1
             public void Move()
             {
                 // Hier die Programmierung der Move Methode
-                // Eine For Schleife mit int Anzahl von Main !
                 // Anzahl kommt vom Zahlengenerator
 
                 int PositionX = 0;
-                int PositionY = 0; 
+                int PositionY = 0;
+                int Richtung = 0;
+
+                Random RichtungZahl = new Random();
+
+                Richtung = RichtungZahl.Next(1,4);
+
+                if (Richtung == 1) // Richtung nach rechts
+                {
+                    
+                    
+                }
+
+
 
                 // Console.SetCursorPosition(PositionX, PositionY);
 
