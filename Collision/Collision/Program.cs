@@ -45,6 +45,11 @@ namespace ConsoleApplication1
             {
                 // Hier die Programmierung der Move Methode
                 // Eine For Schleife mit int Anzahl von Main !
+                // Anzahl kommt vom Zahlengenerator
+
+                int PositionX = 0;
+                int PositionY = 0; 
+
 
             }
 
