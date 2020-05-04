@@ -43,7 +43,55 @@ namespace ConsoleApplication1
             //Öffentliche Methoden
             public void Move()
             {
-            }
+                // Hier die Programmierung der Move Methode
+                /*
+                 * Die Erstplatzierung der Objekte errfolgt außerhalb dieser Methode.
+                 * Hier werden die Objekte verschoben, im Falle einer Kollision (collide) wird die entsprechende Methdoe aufgerufen.
+                 * Selbiges selbe gilt für das Löschen (hide) und Zeichnen (show).
+                 * Die Abfolge der Methoden entspricht der Programmbeschreibung (hide, show und dann collide).
+                 */
+
+                int XAlt = posx; // Die "alten Koordinaten" werden aus der Klasse "einer" übernommen
+                int YAlt = posy; 
+
+                int XNeu = 0, YNeu = 0, Richtung = 0; // Evtl. müssen diese Parameter übergeben werden. 
+
+                Random RichtungZahl = new Random();
+                Richtung = RichtungZahl.Next(1,4);
+
+                if (Richtung == 1) // Richtung nach rechts (+X)
+                {
+                    XNeu = XAlt + 1;
+                    YNeu = YAlt;
+                }
+                else if (Richtung == 2) // Richtung nach links (-X)
+                {
+                    XNeu = XAlt - 1;
+                    YNeu = YAlt; 
+                }
+                else if (Richtung == 3) // Richtung nach oben (+Y)
+                {
+                    XNeu = XAlt;
+                    YNeu = YAlt + 1; 
+                }
+                else if (Richtung == 4) // Richtung nach unten (-Y)
+                {
+                    XNeu = XAlt;
+                    YNeu = YAlt - 1; 
+                } // Ende der If - Bedingung
+
+                posx = XNeu;   // Die "neuen Koordinaten" werden jetzt wieder auf die Position umgespeichert
+                posy = YNeu;
+
+                hide();        // Hier wird das Objekt auf der alten Position gelöscht
+                show();        // Objekt wird an neuer Stelle gezeichnet  
+
+                if (XNeu == XAlt)
+                {
+                    if (YNeu == YAlt)
+                        collide(); // Hier wird überprüft ob es eine Überschreibung geben würde (dies wird auch dargestellt)  
+                } 
+            } // Ende der Move Methode 
 
         }
 
