@@ -46,26 +46,45 @@ namespace ConsoleApplication1
                 // Hier die Programmierung der Move Methode
                 // Anzahl kommt vom Zahlengenerator
 
-                int PositionX = 0;
-                int PositionY = 0;
+                int XNeu = 0;
+                int YNeu = 0;
+                int XAlt = 0;
+                int YAlt = 0; 
                 int Richtung = 0;
 
                 Random RichtungZahl = new Random();
-
                 Richtung = RichtungZahl.Next(1,4);
 
-                if (Richtung == 1) // Richtung nach rechts
+                if (Richtung == 1) // Richtung nach rechts (+X)
                 {
+                    XNeu = XAlt + 1;
+                    YNeu = YAlt;
+
+                    collide();     // Hier wird überprüft ob es eine Überschreibung geben würde (dies wird auch dargestellt)
+                    hide();        // Hier wird das Objekt auf der alten Position gelöscht
+                    show();        // Objekt wird an neuer Stelle gezeichnet
                     
                     
                 }
+                else if (Richtung == 2) // Richtung nach links (-X)
+                {
+
+                }
+                else if (Richtung == 3) // Richtung nach oben (+Y)
+                {
+
+                }
+                else if (Richtung == 4) // Richtung nach unten (-Y)
+                {
+
+                } // Ende der If - Bedingung
 
 
 
                 // Console.SetCursorPosition(PositionX, PositionY);
 
 
-            }
+            } // Ende der Move Methode 
 
         }
 
