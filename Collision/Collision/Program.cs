@@ -43,6 +43,9 @@ namespace ConsoleApplication1
             //Öffentliche Methoden
             public void Move()
             {
+                // Hier die Programmierung der Move Methode
+                // Eine For Schleife mit int Anzahl von Main !
+
             }
 
         }
