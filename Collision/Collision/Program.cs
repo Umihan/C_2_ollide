@@ -106,7 +106,35 @@ namespace ConsoleApplication1
             } // Ende der Move Methode 
 
         }
+        static bool SaveConfig(int Anzahl)
+        {
+            var Path = @"C:\Users\Melvi\OneDrive\Desktop\COLLIDE\C_2_ollide\config.ini";
+            string Text = Convert.ToString(Anzahl);
+            File.WriteAllText(Path, Text);
 
+            if (File.Exists(Path))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        static bool LoadConfig(ref int Anzahl)
+        {
+            var Path = @"C:\Users\Melvi\OneDrive\Desktop\COLLIDE\C_2_ollide\config.ini";
+            string Text = File.ReadAllText(Path);
+            Anzahl = Convert.ToInt32(Text); 
+            if (File.Exists(Path) & Anzahl > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         static void Main(string[] args)
         {
             Console.WindowWidth = seite*2;
