@@ -26,9 +26,21 @@ namespace ConsoleApplication1
             // Öffentliche Eigenschaften
             public int posx, posy;
             public ConsoleColor farbe;
+            Random Zufall = new Random();
             // Konstruktor
             public einer()
             {
+                do
+                {
+                    posy = Zufall.Next(0, seite);
+                    posx = Zufall.Next(0, seite);
+
+                } while (feld[posx, posy] == 1);
+                feld[posx, posy] = 1;
+
+                farbe = (ConsoleColor)(Zufall.Next(Enum.GetNames(typeof(ConsoleColor)).Length));
+
+
             }
             //Private Methoden
             void show()
